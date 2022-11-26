@@ -1,0 +1,61 @@
+<section id="menu">
+    <div class="logo">
+        <img src="/images/logo.png" width="40px" alt="">
+        <h2>yash blogs</h2>
+    </div>
+
+
+    <div class="items">
+        <li><i class="fad fa-chart-pie-alt"></i><a href="/admin/dashboard/view-all-post">All articles</a></li>
+        <li><i class="fas fa-users"></i><a href="/admin/dashboard/create-new-blog">Create New</a></li>
+        <li><i class="fas fa-blog"></i><a href="/admin/blogs">Setting</a></li>
+        <li>
+            <form action="/admin/logout" method="post">
+                <i class="fas fa-sign-out-alt"></i><button type="submit" class="logoutButton">Logout</button>
+            </form>
+        </li>
+    </div>
+</section>
+
+<section id="interface">
+    <div class="navigation">
+        <div class="n1">
+            <div>
+                <i id="menubtn" class="fas fa-bars"></i>
+            </div>
+            <div class="search">
+                <i class="fab fa-searchengin"></i>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="board">
+        <div class="formContainer">
+            <h1>Write New article</h1>
+            <form method="post" enctype="multipart/form-data" action="/admin/dashboard/create-new-blog">
+                <div class="form-group">
+                    <label for="exampleInputEmail1  text-dark" style="font-size: 20px; font-weight: 500;">Title</label>
+                    <input class="form-control" type="text" style="height: 50px;" required placeholder="Enter Title"
+                        name="blogTitle">
+                </div>
+
+                <div class="form-group ">
+                    <label for="exampleFormControlTextarea1  text-dark" style="font-size: 20px; font-weight: 500;">Blog
+                        Content</label>
+                    <textarea class="form-control" required id="exampleFormControlTextarea1" name="blogContent"
+                        rows="10"></textarea>
+                </div>
+
+                <div class="mb-3" style="margin-top: 20px;">
+                    <input class="form-control" required name="blogImage" type="file" accept=".jpg, .png, .gif"
+                        id="formFile">
+                </div>
+
+                <button class="myButton">submit</button>
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>all Blogs</title>
+
+    <!-- Font Awesome Icons -->
+
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <main>
+        <div class="site-content">
+            <div class="posts">
+                {{#each blogs as |value key|}}
+                <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="post-image">
+                        <div>
+                            <img src="data:image/{{value.img.contentType}};base64,{{value.img.data}}" class="img"
+                                alt="blog1">
+                        </div>
+                        <div class="post-info flex-row">
+                            <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
+                            <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp; {{value.date}}</span>
+                        </div>
+                    </div>
+                    <div class="post-title">
+                        <a href="#"> {{value.title}}</a>
+                        <p> {{value.content}}
+                        </p>
+                        <a href="/view-all-post/{{value._id}}">
+                            <button class="btn post-btn" style="margin-top: 10px;">see more &nbsp; <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                {{/each}}
+
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

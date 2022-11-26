@@ -1,0 +1,82 @@
+<section id="menu">
+    <div class="logo">
+        <img src="/images/logo.png" width="40px" alt="">
+        <h2>yash blog</h2>
+    </div>
+
+
+    <div class="items">
+        <li><i class="fad fa-chart-pie-alt"></i><a href="/admin/dashboard/view-all-post">All articles</a></li>
+        <li><i class="fas fa-users"></i><a href="/admin/dashboard/create-new-blog">make a New</a></li>
+        <li><i class="fas fa-blog"></i><a href="/admin/setting">Setting</a></li>
+        <li>
+            <form action="/admin/logout" method="post">
+                <i class="fas fa-sign-out-alt"></i><button type="submit" class="logoutButton">Log off</button>
+            </form>
+        </li>
+
+    </div>
+</section>
+
+<section id="interface">
+    <div class="navigation">
+        <div class="n1">
+            <div>
+                <i id="menubtn" class="fas fa-bars"></i>
+            </div>
+            <div class="search">
+                <i class="fab fa-searchengin"></i>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+
+    </div>
+
+    <h3 class="i-name">All articles</h3>
+
+    <div class="board">
+        <div class="site-content">
+            <div class="posts">
+                {{#each blogs as |value key|}}
+                <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="post-image">
+                        <div>
+                            <img src="data:image/{{value.img.contentType}};base64,{{value.img.data}}" class="img"
+                                alt="blog1">
+                        </div>
+                        <div class="post-info flex-row">
+                            <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
+                            <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;
+                                {{value.date}}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="post-title">
+                        <a href="#">
+                            {{value.title}}
+                        </a>
+                        <p>
+                            {{value.content}}...
+                        </p>
+                        <a href="/admin/dashboard/view-full-blog/{{value._id}}">
+                            <button class="btn post-btn">Read More &nbsp; <i class="fas fa-arrow-right"></i></button>
+                        </a>
+                    </div>
+                </div>
+                <hr>
+                {{/each}}
+
+            </div>
+
+        </div>
+        <div class="light-box">
+            <div class="box-wrapper">
+                <div class="box">
+                    <span class="close-btn">&times</span>
+                    <img src="" alt="" class="light-img">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,65 @@
+<section id="menu">
+    <div class="logo">
+        <img src="/images/logo.png" width="40px" alt="">
+        <h2>yash blogs</h2>
+    </div>
+
+
+    <div class="items">
+        <li><i class="fad fa-chart-pie-alt"></i><a href="/admin/dashboard/view-all-post">All Blogs</a></li>
+        <li><i class="fas fa-users"></i><a href="/admin/dashboard/create-new-blog">Create New</a></li>
+        <li><i class="fas fa-blog"></i><a href="/admin/blogs">Setting</a></li>
+        <li>
+            <form action="/admin/logout" method="post">
+                <i class="fas fa-sign-out-alt"></i><button type="submit" class="logoutButton">Logout</button>
+            </form>
+        </li>
+    </div>
+</section>
+
+<section id="interface">
+    <div class="navigation">
+        <div class="n1">
+            <div>
+                <i id="menubtn" class="fas fa-bars"></i>
+            </div>
+            <div class="search">
+                <i class="fab fa-searchengin"></i>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="board">
+        <div class="site-content">
+            <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                <div class="post-image">
+                    <div>
+                        <img src="data:image/{{blog.img.contentType}};base64,{{blog.img.data}}" class="img" alt="blog1">
+                    </div>
+                    <div class="post-info flex-row">
+                        <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;Admin</span>
+                        <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;{{blog.date}}</span>
+                    </div>
+                </div>
+                <div class="post-title">
+                    <a href="#">{{blog.title}}</a>
+                    <p>{{blog.content}}
+                    </p>
+                    {{!-- <a href="/admin/dashboard/{{value._id}}">
+                        <button class="btn post-btn">Edit &nbsp; <i class="fas fa-edit"></i></button>
+                    </a> --}}
+                    <form action="/admin/dashboard/delete-blog/{{blog._id}}" method="post" style="border: none;">
+                        <button style="border: none; float:right;" class="myButton myButton2" type="submit">
+                            Delete <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </form>
+                    <a href="/admin/dashboard/edit-blog/{{blog._id}}" class="myButton">Edit <i
+                            class="fas fa-edit"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
